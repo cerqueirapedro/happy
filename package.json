@@ -1,25 +1,18 @@
 {
-  "name": "happy-lar-adotivo",
+  "name": "happy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cerqueirapedro/happy-lar-adotivo.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cerqueirapedro/happy-lar-adotivo/issues"
-  },
-  "homepage": "https://github.com/cerqueirapedro/happy-lar-adotivo#readme",
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.1.1",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.4",
+    "sqlite-async": "^1.1.0"
   }
 }

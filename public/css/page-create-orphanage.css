@@ -4,10 +4,10 @@
 }
 
 main {
-    flex: 1;
+    flex:1;
 }
 
-.map-container{
+.map-container {
     margin: 0 0 4rem;
 }
 
@@ -19,5 +19,3 @@ main {
     background: #F5F8FA;
     border-radius: 0 0 20px 20px;
 }
-
-

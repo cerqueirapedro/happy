@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adicionar Orfanato | Happy</title>
+    <title>Adicionar um orfanato | Happy</title>
 
     <link
       rel="stylesheet"
@@ -47,7 +47,7 @@
       </aside>
 
       <main class="animate-appear with-sidebar">
-        <form action="">
+        <form action="save-orphanage" method="post" onsubmit="validate(event)">
           <fieldset>
             <legend>Dados</legend>
 
@@ -55,6 +55,7 @@
               <div id="mapid"></div>
               <input type="hidden" name="lat" />
               <input type="hidden" name="lng" />
+
               <footer>
                 <a href="#" id="select-point">
                   Clique no mapa para adicionar a localização
@@ -69,8 +70,8 @@
 
             <div class="input-block">
               <label for="about"
-                >Sobre <span>Máximo de 300 caracteres</span>
-              </label>
+                >Sobre <span>Máximo de 300 catacteres</span></label
+              >
               <textarea id="about" name="about" required></textarea>
             </div>
 
@@ -88,14 +89,19 @@
                     name="images"
                     placeholder="Cole o link da foto aqui"
                     required
+                    type="url"
                   />
                   <span onclick="deleteField(event)">
-                    <img src="/images/red-x.svg" alt="Remover Foto"/>
+                    <img
+                      src="/images/remove-file.svg"
+                      alt="Remover Foto"
+                    />
                   </span>
                 </div>
               </div>
 
-              <button type="button" onclick="addPhotoField()">
+              <button onclick="addPhotoField()"
+              type="button">
                 <img src="/images/add-file.svg" alt="Nova imagem" />
               </button>
             </div>
@@ -119,7 +125,7 @@
             </div>
 
             <div class="input-block">
-              <label for="open_on_weekends">Atende fim de semana?</label>
+              <label for="open_on_weekends ">Atende fim de semana?</label>
               <input
                 type="hidden"
                 id="open_on_weekends"
@@ -130,14 +136,13 @@
 
               <div class="button-select">
                 <button data-value="1"
-                onclick="toggleSelect(event)" 
-                type="button" 
-                class="active"
-                >Sim</button>
+                  onclick="toggleSelect(event)" 
+                  type="button" 
+                  class="active">Sim</button>
                 <button data-value="0"
-                onclick="toggleSelect(event)" 
-                type="button"
-                >Não</button>
+                  onclick="toggleSelect(event)" 
+                  type="button"  
+                  >Não</button>
               </div>
 
               <button type="submit" class="primary-button">Confirmar</button>

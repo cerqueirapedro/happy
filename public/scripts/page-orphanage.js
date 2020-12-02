@@ -1,18 +1,23 @@
 const options = {
     dragging: false,
     touchZoom: false,
-    doubleclickZoom: false,
+    doubleClickZoom: false,
     scrollWheelZoom: false,
     zoomControl: false
 }
 
-//Cria o mapa e seleciona a região inicial do mapa através da latidude e longitude
-const map = L.map('mapid', options).setView([-12.9015883, -38.4901455], 15);
+// create map
+const map = L.map('mapid', options).setView([-27.222633,-49.6455874], 15)
 
-//Adiciona o mapa com a camada de renderização(tile layer) padrão
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+// create and add tileLayer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+})
+.addTo(map)
 
-//cria o icone
+
+// create icon
 const icon = L.icon({
     iconUrl: "/images/map-marker.svg",
     iconSize: [58, 68],
@@ -20,18 +25,22 @@ const icon = L.icon({
     popupAnchor: [170, 2]
 })
 
-//Cria e Adiciona a marcação no mapa
-L.marker([-12.9015883, -38.4901455], { icon })
+
+// create and add marker
+L
+.marker([-27.222633,-49.6455874], { icon })
 .addTo(map)
 
 
-/*Image Gallery*/
+/* image gallery */
 
 function selectImage(event) {
     const button = event.currentTarget
 
-    //remover todas as classes .active
-    const buttons = document.querySelectorAll('.images button')
+    console.log(button.children)
+
+    // remover todas as classes .active
+    const buttons = document.querySelectorAll(".images button")
     buttons.forEach(removeActiveClass)
 
     function removeActiveClass(button) {
